@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
-## This function computers the inverse of the special "matrix" returned by makeCasheMatrix above. 
+## This function computes the inverse of the special "matrix" returned by makeCasheMatrix above. 
 ## If the inverse has already been calculated (and the matrix has not changed), then
 ## casheSolve should retrieve the inverse from the cashe. 
 
