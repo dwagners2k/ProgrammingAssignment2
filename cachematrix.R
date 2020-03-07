@@ -12,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
         }
         get <- function()x
         setInverse <- function(inverse)m <<- inverse
-        getInverse <- function(j)
+        getInverse <- function()m
         list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 
 }
@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
-## This function computers the inverse of the special "matrix" returned by makeCasheMatrix above. 
+## This function computes the inverse of the special "matrix" returned by makeCasheMatrix above. 
 ## If the inverse has already been calculated (and the matrix has not changed), then
 ## casheSolve should retrieve the inverse from the cashe. 
 
@@ -30,9 +30,10 @@ cacheSolve <- function(x, ...) {
         if(!is.null(m)){
                 message("getting cashed data")
                 return(m)
-                mat <- x$get()
-                m <- solve(mat, ...)
-                x$setInverse(m)
-                m
         }
+        mat <- x$get()
+        m <- solve(mat, ...)
+        x$setInverse(m)
+        m
+        
 }
